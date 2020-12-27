@@ -2,7 +2,7 @@ import express from "express"
 import path from "path"
 import http from "http"
 
-const port: number = 3000
+const port: number = process.env.PORT;
 
 class App {
     private server: http.Server
@@ -15,7 +15,7 @@ class App {
         app.use('/build/three.module.js', express.static(path.join(__dirname, '../../node_modules/three/build/three.module.js')))
         app.use('/jsm/controls/FirstPersonControls', express.static(path.join(__dirname, '../../node_modules/three/examples/jsm/controls/FirstPersonControls.js')))
         app.use('/jsm/loaders/OBJLoader', express.static(path.join(__dirname, '../../node_modules/three/examples/jsm/loaders/OBJLoader.js')))
-        
+
         this.server = new http.Server(app);
     }
 
