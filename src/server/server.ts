@@ -2,7 +2,7 @@ import express from "express"
 import path from "path"
 import http from "http"
 
-const port: number = process.env.PORT;
+const port:number = parseInt(process.env.PORT);
 
 class App {
     private server: http.Server
